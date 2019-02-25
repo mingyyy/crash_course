@@ -4,7 +4,8 @@ print a message to them . The text of each mes- sage should be the same,
 but each message should be personalized with the person’s name .
 '''
 
-import Names
+from week1 import Names
+
 na = Names.names
 
 for n in na:

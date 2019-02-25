@@ -6,7 +6,7 @@ so you need to send out a new set of invitations . You’ll have to think of som
 • Modify your list, replacing the name of the guest who can’t make it with the name of the new person you are inviting.
 • Print a second set of invitation messages, one for each person who is still in your list .
 '''
-from GuestList import guests
+from week1.GuestList import guests
 x=""
 for i in guests:
     x += i +" "

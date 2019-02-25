@@ -15,6 +15,9 @@ Make a copy of the list of pizzas, and call it friend_pizzas . Then, do the foll
 Print the message, My favorite pizzas are:, and then use a for loop to print the first list .
 Print the message, My friend’s favorite pizzas are:, and then use a for loop to print the second list .
 Make sure each new pizza is stored in the appropriate list .
+
+4-12. More Loops: All versions of foods.py in this section have avoided using for loops when printing to save space .
+Choose a version of foods.py, and write two for loops to print each list of foods .
 '''
 pizzas = ["veggie","chicken","beef","double-egg"]
 for i in pizzas:

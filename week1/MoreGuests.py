@@ -9,7 +9,7 @@ Add a print statement to the end of your program informing people that you found
 • Print a new set of invitation messages, one for each person in your list .
 '''
 
-import GuestList
+from week1 import GuestList
 
 GuestList.guests.insert(0, "Dan Brown")
 GuestList.guests.insert(2, "Paolo Cuelo")
