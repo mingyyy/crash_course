@@ -8,6 +8,7 @@ Your function should work for a call like this one:
 Print the dictionary that’s returned to make sure all the information was stored correctly .
 '''
 
+
 def make_car(manu, model, **kwargs):
     print(f"You car is a {model}, made by {manu}. ")
     if kwargs:
@@ -15,6 +16,7 @@ def make_car(manu, model, **kwargs):
         for k, v in kwargs.items():
             print(f"{k}: {v}")
     return kwargs
+
 
 car = make_car('subaru', 'outback', color='blue', year= '1988', tow_package=True)
 
