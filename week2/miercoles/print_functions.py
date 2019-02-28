@@ -1,3 +1,7 @@
+import sys
+print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/Users/Ming/Documents/CodingNomads/2019_crashcourse/week2/miercoles'])
+
 import printing_functions as x
 
 """
