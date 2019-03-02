@@ -21,7 +21,8 @@ def unpack_list(nested_list, flat_list=[]):
 
 s = ['andy', 'arno', 'ben', 'blake', 'casey', 'daniel', 'freddy', 'melissa', 'micheal', 'ming', 'nick', 'rob']
 week1 = [["rob","ming","casey"],["andy","melissa","arno"],["ben","freddy","micheal"],["blake","daniel","nick"]]
-
+# week2 result:
+week2 = [["rob","melissa","daniel"],["ming","arno","ben"],["casey","freddy","andy"],["blake","micheal","nick"]]
 group_1, group_2, group_3, group_4 = [], [], [], []
 
 counter=0
@@ -67,5 +68,3 @@ for i in leftover:
 
 print(group_1, group_2, group_3, group_4)
 
-# week2 result:
-week2 = [["rob","melissa","daniel"],["ming","arno","ben"],["casey","freddy","andy"],["blake","micheal","nick"]]

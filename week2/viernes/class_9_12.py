@@ -8,3 +8,4 @@ from class_9_7 import Admin
 
 daniel = Admin("daniel", "france")
 daniel.show_privileges()
+

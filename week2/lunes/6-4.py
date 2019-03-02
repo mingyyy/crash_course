@@ -12,7 +12,4 @@ glossary = {"List": "collections of information in variables called lists",
             "PEP": "Python Enhancement Proposal"}
 
 for key, value in glossary.items():
-    print(f"{key} in Python means {value}\n")
-
-for key, value in glossary.items():
     print(f"{key}: \n    in Python it means {value}\n")
