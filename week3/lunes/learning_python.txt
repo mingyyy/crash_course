@@ -1,0 +1,6 @@
+In Python you can define classes
+In Python you can import files
+In Python you can export files
+In Python you can do data analysis
+In Python you can create GAMES
+In Python you can calculate something
