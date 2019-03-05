@@ -21,7 +21,7 @@ def greet_user():
     """Greet the user by name."""
     filename = 'username.json'
     try:
-        with open(filename) as f_obj:
+        with open(filename,"r") as f_obj:
             username = json.load(f_obj)
     except FileNotFoundError:
         username = input("What is your name? ")
