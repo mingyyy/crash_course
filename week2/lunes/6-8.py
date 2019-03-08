@@ -9,17 +9,12 @@ lila = {"kind": "dog", "owner": "sarah"}
 lady = {"kind": "dog", "owner": "may"}
 babe = {"kind": "cat", "owner": "chantelle"}
 coco = {"kind": "pig", "owner": "lucky"}
-
 pets = [babe, coco, lady, lila]
-
-print(pets[0])
-
-print(dir())
 
 s = []
 for i in dir():
     if len(i) == 4 and i != "pets":
-        s.append(i)
+        s.append(i.capitalize())
 s.sort()
 n = 0
 for each in pets:

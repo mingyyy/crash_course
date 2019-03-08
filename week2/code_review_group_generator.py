@@ -5,7 +5,6 @@ This code generate a the code-review group for Python class.
 
 Note: need to modify to take in previous weeks...
 '''
-
 import random
 
 
@@ -20,15 +19,17 @@ def unpack_list(nested_list, flat_list=[]):
 
 
 s = ['andy', 'arno', 'ben', 'blake', 'casey', 'daniel', 'freddy', 'melissa', 'micheal', 'ming', 'nick', 'rob']
-week1 = [["rob","ming","casey"],["andy","melissa","arno"],["ben","freddy","micheal"],["blake","daniel","nick"]]
+week0 = [["rob","ming","casey"], ["andy","melissa","arno"], ["ben","freddy","micheal"], ["blake","daniel","nick"]]
 # week2 result:
-week2 = [["rob","melissa","daniel"],["ming","arno","ben"],["casey","freddy","andy"],["blake","micheal","nick"]]
+week1 = [["rob","melissa","daniel"], ["ming","arno","ben"], ["casey","freddy","andy"], ["blake","micheal","nick"]]
+# week 3 = result:
+week3 = [['rob', 'andy', 'arno'], ['melissa', 'freddy', 'blake'], ['daniel', 'casey', 'ben'], ['nick', 'ming', 'micheal']]
 group_1, group_2, group_3, group_4 = [], [], [], []
 
 counter=0
 first_choice = 0
-second_choice = 1
-third_choice = 2
+second_choice = 2
+third_choice = 1
 fourth_choice = 3
 
 # starting from splitting up first choice to group 1 to 3
@@ -67,4 +68,3 @@ for i in leftover:
     eval("group_" + str(counter)).append(i)
 
 print(group_1, group_2, group_3, group_4)
-
