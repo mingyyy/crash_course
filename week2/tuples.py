@@ -1,4 +1,3 @@
-
 def my_funct():
     a = 1
     b = 2
