@@ -1,15 +1,10 @@
-import sys
 import pygame
+from pygame.sprite import Group
 
-
-class Settings():
-    def __init__(self):
-        self.screen_width = 800
-        self.screen_height = 600
-        self.bg_color = (0, 0, 0)
-
-        # ship settings
-        self.ship_speed_factor = 1.5
+from settings import Settings
+from game_functions import check_events, update_screen, update_bullets, create_fleet
+from ship import Ship
+from alien import Alien
 
 
 def run_game():
@@ -20,87 +15,21 @@ def run_game():
         (ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption('Alien Invasion')
 
-    # Make a ship
+    # Make a ship， a group of bullets, and a group of aliens
     ship = Ship(ai_settings, screen)
+    bullets = Group()
+    aliens = Group()
+
+    # Create the fleet of aliens
+    create_fleet(ai_settings, screen, ship, aliens)
 
     while True:
-        check_events(ship)
+        check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        update_screen(ai_settings, screen, ship)
+        update_bullets(bullets)
 
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
+        update_screen(ai_settings, screen, ship, aliens, bullets)
 
-        pygame.display.flip()
-
-
-class Ship():
-    def __init__(self, ai_settings, screen):
-        # Initialize the ship and set its starting position
-        self.screen = screen
-        self.ai_settings = ai_settings
-
-        # Load the ship image and get its rect
-        self.image = pygame.image.load('images/ship.bmp')
-        self.rect = self.image.get_rect()
-        self.screen_rect = screen.get_rect()
-
-        # Start each new ship at the bottom center of the screen
-        self.rect.centerx = self.screen_rect.centerx
-        self.rect.bottom = self.screen_rect.bottom
-        # (0,0) os at the top-left corner of the screen
-
-        # Store a decimal value for the ship's center
-        self.center = float(self.rect.centerx)
-
-        # Movement flags
-        self.moving_right = False
-        self.moving_left = False
-
-    def update(self):
-        if self.moving_right and self.rect.right < self.screen_rect.right:
-            self.center += self.ai_settings.ship_speed_factor
-        if self.moving_left and self.rect.left > 0:
-            self.center -= self.ai_settings.ship_speed_factor
-
-        self.rect.centerx = self.center
-
-    def blitme(self):
-        # Draw the ship at its current location
-        self.screen.blit(self.image, self.rect)
-
-
-# game_functions.py
-def check_keydown_events(event, ship):
-    # Respond to keypresses
-    if event.key == pygame.K_RIGHT:
-        ship.moving_right = True
-    elif event.key == pygame.K_LEFT:
-        ship.moving_left = True
-
-
-def check_keyup_events(event, ship):
-    # Respond to key releases
-    if event.key == pygame.K_RIGHT:
-        ship.moving_right = False
-    elif event.key == pygame.K_LEFT:
-        ship.moving_left = False
-
-def check_events(ship):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
-        elif event.type == pygame.KEYDOWN:
-            check_keydown_events(event, ship)
-        elif event.type == pygame.KEYUP:
-            check_keyup_events(event, ship)
-
-
-def update_screen(ai_settings, screen, ship):
-    # Update images on the screen and flip to the new screen
-    screen.fill(ai_settings.bg_color)
-    ship.blitme()
-    pygame.display.flip()
 
 
 if __name__ == '__main__':
